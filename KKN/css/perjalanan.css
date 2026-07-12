@@ -1,0 +1,167 @@
+/* ===== PERJALANAN (JOURNEY) ===== */
+.perjalanan { background: linear-gradient(135deg, var(--green-deep), var(--bg-dark)); }
+.journey-timeline { display: flex; flex-direction: column; gap: 48px; }
+.journey-step {
+  display: grid; grid-template-columns: 60px 1fr 1fr; gap: 32px; align-items: center;
+}
+.journey-step.reverse { direction: rtl; }
+.journey-step.reverse > * { direction: ltr; }
+
+.step-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem; font-weight: 700; color: rgba(59,191,173,0.3); line-height: 1;
+}
+.step-visual { height: 300px; border-radius: 20px; overflow: hidden; position: relative; }
+.sawah-visual    {
+  background-image: url('../sawah-full.jpg');
+  background-size: cover;
+  background-position: center 75%; /* Fokus ke hamparan sawah di bagian bawah */
+  cursor: pointer;
+}
+.sawah-visual::after {
+  content: '🔍';
+  position: absolute;
+  top: 12px; right: 12px;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.2s;
+}
+.sungai-visual   {
+  background-image: url('../sungai.jpg');
+  background-size: cover;
+  background-position: center 70%;
+  cursor: pointer;
+}
+.sungai-visual::after {
+  content: '🔍';
+  position: absolute;
+  top: 12px; right: 12px;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.2s;
+}
+.mancing-visual  {
+  background-image: url('../mancing.jpg');
+  background-size: cover;
+  background-position: center 50%;
+  cursor: pointer;
+}
+.mancing-visual::after {
+  content: '🔍';
+  position: absolute;
+  top: 12px; right: 12px;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.2s;
+}
+.airterjun-visual {
+  background-image: url('../air-terjun.png');
+  background-size: cover;
+  background-position: center 55%; /* Fokus ke air terjun & kolam tosca */
+  cursor: pointer;
+}
+.airterjun-visual::after {
+  content: '🔍';
+  position: absolute;
+  top: 12px; right: 12px;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.2s;
+}
+.perahu-visual {
+  background-image: url('../perahu.jpg'), linear-gradient(135deg, #1A3A25 0%, #3BBFAD 100%);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+.perahu-visual::after {
+  content: '🔍';
+  position: absolute;
+  top: 12px; right: 12px;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.2s;
+}
+.goa-visual {
+  background-image: url('../goa.jpg'), linear-gradient(135deg, #1A3A25 0%, #a4b370 100%);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+.goa-visual::after {
+  content: '🔍';
+  position: absolute;
+  top: 12px; right: 12px;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.2s;
+}
+
+
+
+.step-badge {
+  position: absolute; bottom: 14px; left: 14px;
+  background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+  color: white; padding: 6px 14px; border-radius: 8px;
+  font-size: 0.82rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.2);
+}
+.step-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; color: white; margin-bottom: 10px;
+}
+.step-content p { color: rgba(255,255,255,0.75); line-height: 1.7; font-size: 0.95rem; margin-bottom: 16px; }
+.step-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.step-tags span {
+  background: rgba(59,191,173,0.2); color: var(--teal);
+  padding: 4px 12px; border-radius: 50px; font-size: 0.78rem; font-weight: 500;
+  border: 1px solid rgba(59,191,173,0.3);
+}
+
+@media (max-width: 900px) {
+  .journey-step {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+  .journey-step.reverse {
+    direction: ltr;
+  }
+  .journey-step .step-number {
+    font-size: 2.2rem;
+    margin-bottom: -4px;
+  }
+  .journey-step .step-visual {
+    display: block;
+    width: 100%;
+    height: 220px;
+    border-radius: 16px;
+  }
+  .journey-step .step-content {
+    width: 100%;
+  }
+}

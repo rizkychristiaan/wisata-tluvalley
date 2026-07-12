@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Air Terjun Barong Kulon – Wisata Alam Dusun Barong Kulon</title>
+  <meta name="description"
+    content="Temukan keindahan tersembunyi Air Terjun Barong Kulon – kolam tosca alami, sawah hijau, dan sungai jernih yang memanjakan mata." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <!-- CSS per section -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/tentang.css" />
+  <link rel="stylesheet" href="css/perjalanan.css" />
+  <link rel="stylesheet" href="css/galeri.css" />
+  <link rel="stylesheet" href="css/informasi.css" />
+  <link rel="stylesheet" href="css/lokasi.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <img src="logo.jpg" alt="Logo Tluvalley" class="logo-img" />
+        <span>Tluvalley</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#tentang" data-i18n="nav_about">Tentang</a></li>
+        <li><a href="#perjalanan" data-i18n="nav_journey">Perjalanan</a></li>
+        <li><a href="#galeri" data-i18n="nav_gallery">Galeri</a></li>
+        <li><a href="#info" data-i18n="nav_info">Informasi</a></li>
+        <li><a href="#lokasi" class="nav-cta" data-i18n="nav_map">Lihat Peta</a></li>
+      </ul>
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn active" id="btnID" onclick="switchLang('id')">🇮🇩 ID</button>
+        <button class="lang-btn" id="btnEN" onclick="switchLang('en')">🇬🇧 EN</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#tentang" data-i18n="nav_about">Tentang</a>
+      <a href="#perjalanan" data-i18n="nav_journey">Perjalanan</a>
+      <a href="#galeri" data-i18n="nav_gallery">Galeri</a>
+      <a href="#info" data-i18n="nav_info">Informasi</a>
+      <a href="#lokasi" data-i18n="nav_map">Lihat Peta</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-particles" id="particles"></div>
+
+    <!-- Decorative Illustrations (Sawah, Air Terjun, Bambu/Pohon) -->
+    <div class="hero-illustrations">
+      <!-- Kiri: Sawah (Rice stalks), Bambu & Pohon Kelapa -->
+      <svg class="decor-left" viewBox="0 0 400 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Batang Bambu Melengkung -->
+        <path d="M30 800 C 80 700, 100 500, 60 200" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M10 800 C 50 720, 70 520, 30 250" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <!-- Daun Bambu -->
+        <path d="M60 550 C 110 525, 155 535, 170 558 C 120 568, 75 568, 60 550 Z" fill="currentColor" opacity="0.55"/>
+        <path d="M50 450 C 95 420, 140 430, 158 455 C 110 468, 65 465, 50 450 Z" fill="currentColor" opacity="0.5"/>
+        <path d="M65 650 C 115 625, 160 635, 175 655 C 128 668, 82 665, 65 650 Z" fill="currentColor" opacity="0.45"/>
+        <path d="M35 350 C 80 322, 120 332, 138 354 C 92 368, 50 365, 35 350 Z" fill="currentColor" opacity="0.5"/>
+        <!-- Batang Padi -->
+        <path d="M180 800 C 220 740, 240 620, 200 420" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M220 800 C 260 748, 275 630, 240 445" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <!-- Bulir Padi -->
+        <path d="M200 420 C 182 400, 164 400, 155 416 C 165 432, 188 432, 200 420 Z" fill="currentColor" opacity="0.65"/>
+        <path d="M215 450 C 198 430, 180 430, 170 446 C 180 462, 202 462, 215 450 Z" fill="currentColor" opacity="0.65"/>
+        <path d="M222 480 C 208 460, 192 460, 183 475 C 192 490, 210 490, 222 480 Z" fill="currentColor" opacity="0.6"/>
+        <path d="M240 450 C 257 430, 272 430, 280 446 C 272 462, 252 462, 240 450 Z" fill="currentColor" opacity="0.6"/>
+        <path d="M246 478 C 262 458, 276 460, 284 475 C 276 492, 256 492, 246 478 Z" fill="currentColor" opacity="0.55"/>
+        <!-- Batang Pohon Kelapa -->
+        <path d="M330 800 C 338 700, 320 580, 345 400" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+        <!-- Mahkota daun kelapa -->
+        <path d="M345 400 C 385 355, 390 310, 370 280 C 358 310, 348 360, 345 400 Z" fill="currentColor" opacity="0.5"/>
+        <path d="M345 400 C 395 375, 400 345, 390 318 C 372 342, 355 375, 345 400 Z" fill="currentColor" opacity="0.45"/>
+        <path d="M345 400 C 310 355, 295 308, 308 275 C 322 305, 338 358, 345 400 Z" fill="currentColor" opacity="0.5"/>
+        <path d="M345 400 C 298 390, 275 365, 268 338 C 290 355, 325 385, 345 400 Z" fill="currentColor" opacity="0.45"/>
+        <path d="M345 400 C 370 428, 378 458, 362 480 C 350 460, 344 430, 345 400 Z" fill="currentColor" opacity="0.4"/>
+      </svg>
+
+      <!-- Kanan: Air Terjun Meluncur & Gelombang Kolam -->
+      <svg class="decor-right" viewBox="0 0 400 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Garis aliran air terjun dari atas ke bawah -->
+        <path d="M370 0 C 280 150, 300 350, 220 500 C 165 615, 255 718, 160 800" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M395 10 C 318 165, 335 375, 265 525 C 212 640, 295 732, 210 800" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M345 0 C 248 135, 262 330, 178 478 C 122 594, 215 706, 118 800" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M400 60 C 328 225, 342 435, 282 582 C 235 695, 308 750, 240 800" stroke="currentColor" stroke-width="1" stroke-dasharray="12 6"/>
+        <!-- Percikan air kecil di titik jatuh -->
+        <circle cx="235" cy="508" r="5" fill="currentColor" opacity="0.5"/>
+        <circle cx="258" cy="530" r="3.5" fill="currentColor" opacity="0.4"/>
+        <circle cx="218" cy="545" r="4" fill="currentColor" opacity="0.35"/>
+        <circle cx="270" cy="515" r="2.5" fill="currentColor" opacity="0.45"/>
+        <!-- Ripple gelombang kolam tosca -->
+        <path d="M60 718 Q 185 698, 315 718 Q 365 726, 400 718" stroke="currentColor" stroke-width="1.2" stroke-dasharray="8 4"/>
+        <path d="M35 748 Q 175 726, 330 748 Q 380 758, 400 748" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M10 778 Q 165 754, 345 778 Q 380 789, 400 778" stroke="currentColor" stroke-width="2"/>
+        <!-- Batu tepi kolam -->
+        <ellipse cx="350" cy="792" rx="38" ry="11" fill="currentColor" opacity="0.28"/>
+        <ellipse cx="90" cy="796" rx="30" ry="10" fill="currentColor" opacity="0.22"/>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">Air Terjun<br /><span class="hero-highlight">Tluvalley</span></h1>
+      <p class="hero-sub" data-i18n="hero_sub">Surga tersembunyi di Dusun Barong Kulon — kolam tosca alami, hutan bambu lebat, sawah hijau
+        membentang, dan kesegaran alam yang tiada duanya.</p>
+      <div class="hero-actions">
+        <a href="#tentang" class="btn-primary" data-i18n="hero_cta_explore">Jelajahi Sekarang</a>
+        <a href="#lokasi" class="btn-ghost" data-i18n="hero_cta_map">📍 Lihat Lokasi</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- ===== TENTANG ===== -->
+  <section id="tentang" class="tentang section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="about_tag">Tentang Destinasi</span>
+        <h2 data-i18n="about_title">Keajaiban Alam <em>Barong Kulon</em></h2>
+        <p data-i18n="about_sub">Lebih dari sekadar air terjun — sebuah perjalanan menuju ketenangan alam yang sesungguhnya.</p>
+      </div>
+      <div class="tentang-grid">
+        <div class="tentang-visual">
+          <div class="visual-frame">
+            <div class="visual-img waterfall-img">
+              <div class="img-badge">Air Terjun Tluvalley</div>
+            </div>
+          </div>
+        </div>
+        <div class="tentang-text">
+          <h3 data-i18n="about_h3">Asal-usul Nama</h3>
+          <p data-i18n="about_p1">Nama "Tluvalley" (Telu Vali) dicetuskan oleh salah satu warga lokal yang proaktif dalam mempromosikan potensi wisata yang belum diketahui banyak orang.</p>
+          <p data-i18n="about_p2">Nama ini merupakan gabungan dari kata "Telu" (bahasa Jawa yang berarti tiga) dan "Vali" (dari kata valley yang berarti lembah), sehingga maknanya secara harfiah adalah tiga lembah.</p>
+          
+          <h3 style="margin-top: 30px; margin-bottom: 15px;" data-i18n="about_facilities_title">Area & Fasilitas Wisata</h3>
+          <div class="feature-list">
+            <div class="feature-item">
+              <span class="fi-icon">🏕️</span>
+              <div>
+                <strong data-i18n="facility1_title">Fasilitas Umum</strong>
+                <p data-i18n="facility1_desc">Pengunjung dapat menikmati fasilitas tempat duduk, toilet, dan pelampung secara gratis (bukan untuk disewakan).</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="fi-icon">🏊</span>
+              <div>
+                <strong data-i18n="facility2_title">Spot Rekreasi</strong>
+                <p data-i18n="facility2_desc">Terdapat area berenang serta area memancing (meskipun area memancing saat ini masih dalam tahap evaluasi fungsionalitasnya).</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="fi-icon">🔦</span>
+              <div>
+                <strong data-i18n="facility3_title">Eksplorasi Goa</strong>
+                <p data-i18n="facility3_desc">Terdapat sebuah goa yang bisa dikunjungi. Karena belum memiliki instalasi listrik, pengunjung harus membawa penerangan sendiri dan pengelola perlu memberikan peringatan awal mengenai satwa liar.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="fi-icon">🛶</span>
+              <div>
+                <strong data-i18n="facility4_title">Area Perahu</strong>
+                <p data-i18n="facility4_desc">Terdapat rencana rute perahu dalam peta wisata. Saat ini, area perahu tidak dapat diakses karena debit air sedang surut akibat musim kemarau.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PERJALANAN (JOURNEY) ===== -->
+  <section id="perjalanan" class="perjalanan section">
+    <div class="container">
+      <div class="section-header light">
+        <span class="section-tag tag-light" data-i18n="journey_tag">Keindahan Sepanjang Jalan</span>
+        <h2 data-i18n="journey_title">Nikmati Setiap <em>Langkah Perjalanan</em></h2>
+        <p data-i18n="journey_sub">Perjalanan menuju air terjun adalah pengalaman tersendiri yang tak kalah indahnya</p>
+      </div>
+      <div class="journey-timeline">
+        <div class="journey-step">
+          <div class="step-number">01</div>
+          <div class="step-visual sawah-visual" data-lightbox="sawah-full.jpg">
+            <div class="step-badge" data-i18n="journey_step1_badge">🌾 Sawah Hijau</div>
+          </div>
+          <div class="step-content">
+            <h3 data-i18n="journey_step1_title">Hamparan Sawah yang Menghijau</h3>
+            <p data-i18n="journey_step1_desc">Perjalanan dimulai dengan melewati petak-petak sawah yang menghijau subur. Aroma tanah basah dan pemandangan padi yang bergoyang lembut menyambut setiap pengunjung.</p>
+            <div class="step-tags">
+              <span data-i18n="journey_step1_tag1">🏞️ Pemandangan Pedesaan</span>
+              <span data-i18n="journey_step1_tag2">📸 Spot Foto</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="journey-step reverse">
+          <div class="step-number">02</div>
+          <div class="step-visual sungai-visual" data-lightbox="sungai-full.jpg">
+            <div class="step-badge" data-i18n="journey_step2_badge">🏞️ Sungai & Kali</div>
+          </div>
+          <div class="step-content">
+            <h3 data-i18n="journey_step2_title">Sungai Berbatu yang Jernih</h3>
+            <p data-i18n="journey_step2_desc">Di tengah perjalanan, Anda akan menemui sungai berbatu dengan air jernih mengalir. Suara gemericik air dan kesejukan alam menjadi teman setia perjalanan Anda.</p>
+            <div class="step-tags">
+              <span data-i18n="journey_step2_tag1">💧 Air Jernih</span>
+              <span data-i18n="journey_step2_tag2">🪨 Bebatuan Alami</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="journey-step">
+          <div class="step-number">03</div>
+          <div class="step-visual mancing-visual" data-lightbox="mancing.jpg">
+            <div class="step-badge" data-i18n="journey_step3_badge">🎣 Spot Mancing</div>
+          </div>
+          <div class="step-content">
+            <h3 data-i18n="journey_step3_title">Area Spot Mancing</h3>
+            <p data-i18n="journey_step3_desc">Bagi pengunjung yang gemar memancing, aliran sungai yang tenang di sekitar kawasan ini menyediakan spot memancing alami yang damai dengan suasana hutan yang rindang.</p>
+            <div class="step-tags">
+              <span data-i18n="journey_step3_tag1">🎣 Hobi & Santai</span>
+              <span data-i18n="journey_step3_tag2">🍃 Suasana Damai</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="journey-step reverse">
+          <div class="step-number">04</div>
+          <div class="step-visual perahu-visual" data-lightbox="perahu.jpg">
+            <div class="step-badge" data-i18n="journey_step4_badge">🛶 Naik Perahu</div>
+          </div>
+          <div class="step-content">
+            <h3 data-i18n="journey_step4_title">Spot Naik Perahu Sungai</h3>
+            <p data-i18n="journey_step4_desc">Nikmati sensasi menyusuri aliran sungai yang tenang dengan perahu tradisional. Rasakan kedekatan dengan alam sekitar yang masih asri.</p>
+            <div class="step-tags">
+              <span data-i18n="journey_step4_tag1">🛶 Petualangan</span>
+              <span data-i18n="journey_step4_tag2">🌊 Susur Sungai</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="journey-step">
+          <div class="step-number">05</div>
+          <div class="step-visual goa-visual" data-lightbox="goa.jpg">
+            <div class="step-badge" data-i18n="journey_step5_badge">🪨 Goa Kecil</div>
+          </div>
+          <div class="step-content">
+            <h3 data-i18n="journey_step5_title">Goa Kecil Eksotis</h3>
+            <p data-i18n="journey_step5_desc">Sebuah lorong goa batu kecil yang terbentuk secara alami. Menambah petualangan seru yang memacu rasa ingin tahu sepanjang trekking Anda.</p>
+            <div class="step-tags">
+              <span data-i18n="journey_step5_tag1">🪨 Goa Alami</span>
+              <span data-i18n="journey_step5_tag2">🔍 Penjelajahan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="journey-step reverse">
+          <div class="step-number">06</div>
+          <div class="step-visual airterjun-visual" data-lightbox="airterjun.jpg">
+            <div class="step-badge" data-i18n="journey_step6_badge">💦 Air Terjun!</div>
+          </div>
+          <div class="step-content">
+            <h3 data-i18n="journey_step6_title">Surga: Air Terjun Tluvalley</h3>
+            <p data-i18n="journey_step6_desc">Dan akhirnya — kolam tosca yang memukau! Air terjun setinggi belasan meter mengalir deras ke kolam alami berwarna hijau kebiruan. Momen yang tak akan terlupakan.</p>
+            <div class="step-tags">
+              <span data-i18n="journey_step6_tag1">💚 Kolam Tosca</span>
+              <span data-i18n="journey_step6_tag2">✨ Momen Terbaik</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALERI ===== -->
+  <section id="galeri" class="galeri section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="gallery_tag">Galeri</span>
+        <h2 data-i18n="gallery_title">Keindahan yang <em>Menakjubkan</em></h2>
+        <p data-i18n="gallery_sub">Setiap sudut menyimpan keindahan yang menunggu untuk ditemukan</p>
+      </div>
+      <div class="gallery-slider-wrap" id="gallerySlider">
+        <!-- Counter badge -->
+        <div class="slide-counter" id="slideCounter">1 / 21</div>
+
+        <!-- Slides track -->
+        <div class="gallery-track" id="galleryTrack">
+
+          <div class="gallery-slide">
+            <img src="air-terjun.png" alt="Air Terjun Utama Tluvalley" loading="lazy" data-lightbox="air-terjun.png" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Air Terjun Utama</strong>
+              <small>Kolam tosca alami — ikon Tluvalley</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="airterjun.jpg" alt="Panorama Air Terjun Tluvalley" loading="lazy" data-lightbox="airterjun.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Panorama Air Terjun</strong>
+              <small>Dua aliran air bertemu di kolam jernih</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="hutan.jpg" alt="Jalur Trekking Hutan Tluvalley" loading="lazy" data-lightbox="hutan.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Jalur Trekking Hutan</strong>
+              <small>Lorong pohon tropis menuju air terjun</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="sungai-sengangenin.jpg" alt="Spot Foto Sengangenin" loading="lazy" data-lightbox="sungai-sengangenin.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Spot Foto Sengangenin</strong>
+              <small>Bermain air di bawah pohon rindang</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="kelompok-kkn.jpg" alt="Tim KKN & Warga Lokal" loading="lazy" data-lightbox="kelompok-kkn.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Kebersamaan di Wisata</strong>
+              <small>Tim KKN bersama warga lokal mempromosikan wisata</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="santai-pinggir-sungai.jpg" alt="Bersantai di Tepi Sungai" loading="lazy" data-lightbox="santai-pinggir-sungai.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Dek Kayu Santai</strong>
+              <small>Menikmati suasana tenang pinggir sungai</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="jembatan-tali.jpg" alt="Jembatan Tali Tluvalley" loading="lazy" data-lightbox="jembatan-tali.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Jembatan Tali Wisata</strong>
+              <small>Spot petualangan seru melintasi sungai</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="sungai-hijau.jpg" alt="Keindahan Aliran Sungai" loading="lazy" data-lightbox="sungai-hijau.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Aliran Sungai Hijau</strong>
+              <small>Keindahan tebing batu dan air sungai tosca</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="memancing.jpg" alt="Aktivitas Memancing" loading="lazy" data-lightbox="memancing.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Aktivitas Memancing</strong>
+              <small>Mencoba peruntungan memancing di aliran sungai tenang</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="mulut-goa.jpg" alt="Pintu Masuk Goa" loading="lazy" data-lightbox="mulut-goa.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Pintu Masuk Goa</strong>
+              <small>Eksplorasi goa kecil alami di sekitar tebing</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="telaga-tosca.jpg" alt="Telaga Aliran Air" loading="lazy" data-lightbox="telaga-tosca.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Telaga Aliran Air</strong>
+              <small>Keindahan air hijau tosca tenang di pedalaman</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="papan-joran.jpg" alt="Papan Joran Gratis" loading="lazy" data-lightbox="papan-joran.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Penyewaan Joran Gratis</strong>
+              <small>Peralatan memancing disediakan pengelola secara gratis</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="stalaktit-goa.jpg" alt="Struktur Stalaktit Goa" loading="lazy" data-lightbox="stalaktit-goa.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Dinding Batu Goa</strong>
+              <small>Ornamen stalaktit alami yang terbentuk ratusan tahun</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="perahu-anak.jpg" alt="Petualangan Perahu" loading="lazy" data-lightbox="perahu-anak.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Menyusuri Sungai</strong>
+              <small>Merasakan keseruan naik perahu kayu tradisional di aliran Tluvalley</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="perahu-sungai.jpg" alt="Aliran Sungai Tenang" loading="lazy" data-lightbox="perahu-sungai.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Jalur Perahu Kayu</strong>
+              <small>Aliran sungai yang tenang dikelilingi pepohonan rimbun</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="sungai-sore.jpg" alt="Pesona Sungai Tluvalley" loading="lazy" data-lightbox="sungai-sore.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Cahaya Sore Sungai</strong>
+              <small>Pantulan matahari sore di sela-sela pohon kelapa</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="susur-sungai.jpg" alt="Eksplorasi Sungai Alami" loading="lazy" data-lightbox="susur-sungai.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Pesona Hijau Sungai</strong>
+              <small>Keindahan vegetasi hutan tropis di sepanjang sungai</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="parkir-motor.jpg" alt="Area Parkir Motor" loading="lazy" data-lightbox="parkir-motor.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Area Parkir Motor</strong>
+              <small>Fasilitas parkir luas khusus kendaraan roda dua yang aman dan rindang</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="daun-rimbun.jpg" alt="Kanopi Rimbun Sungai" loading="lazy" data-lightbox="daun-rimbun.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Kanopi Rimbun Sungai</strong>
+              <small>Dedaunan hijau tropis yang meneduhkan sepanjang aliran sungai</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="telaga-hijau.jpg" alt="Telaga Hijau Alami" loading="lazy" data-lightbox="telaga-hijau.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Telaga Hijau Alami</strong>
+              <small>Air tenang jernih berwarna hijau tosca di antara tebing batu</small>
+            </div>
+          </div>
+
+          <div class="gallery-slide">
+            <img src="tangga-bambu.jpg" alt="Akses Tangga Bambu" loading="lazy" data-lightbox="tangga-bambu.jpg" style="cursor: zoom-in;" />
+            <div class="slide-caption">
+              <strong>Akses Tangga Bambu</strong>
+              <small>Jalur tracking tangga kayu dan bambu yang kokoh menuju tepian sungai</small>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Arrow navigation -->
+        <button class="gallery-prev" id="galleryPrev" aria-label="Sebelumnya">&#8592;</button>
+        <button class="gallery-next" id="galleryNext" aria-label="Berikutnya">&#8594;</button>
+      </div>
+
+      <!-- Dot navigation -->
+      <div class="gallery-dots" id="galleryDots"></div>
+
+      <div class="gallery-cta">
+        <p>🎥 Bagikan momen seru kamu dan ikuti kami di TikTok!</p>
+        <a href="https://www.tiktok.com/@grojokantluvalley?_r=1&_t=ZS-97xouAKfdyh" target="_blank" rel="noopener noreferrer" class="btn-outline">@grojokantluvalley</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INFORMASI ===== -->
+  <section id="info" class="info section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="info_tag">Informasi Wisata</span>
+        <h2 data-i18n="info_title">Sebelum Kamu <em>Berkunjung</em></h2>
+        <p data-i18n="info_sub">Semua yang perlu kamu ketahui untuk perjalanan yang sempurna</p>
+      </div>
+      <div class="info-grid">
+        <div class="info-card" id="info-jam">
+          <div class="info-icon">🕗</div>
+          <h3>Jam Operasional</h3>
+          <div class="info-detail">
+            <div class="info-row">
+              <span>Senin – Minggu</span>
+              <strong>08.00 – 17.00 WIB</strong>
+            </div>
+            <div class="info-row">
+              <span>Hari Libur</span>
+              <strong>Tetap Buka</strong>
+            </div>
+          </div>
+          <p class="info-note">⚠️ Disarankan datang pagi hari untuk menghindari hujan sore</p>
+        </div>
+
+        <div class="info-card" id="info-tiket">
+          <div class="info-icon">🎟️</div>
+          <h3>Tiket Masuk</h3>
+          <div class="info-detail">
+            <div class="info-row">
+              <span>Wisatawan Lokal</span>
+              <strong>Rp 5.000</strong>
+            </div>
+            <div class="info-row">
+              <span>Wisatawan Asing</span>
+              <strong>Rp 25.000</strong>
+            </div>
+            <div class="info-row">
+              <span>Parkir Motor</span>
+              <strong class="price-free">Gratis ✓</strong>
+            </div>
+            <div class="info-row">
+              <span>Akses Mobil</span>
+              <strong style="color: #ef4444;">Tidak Bisa ❌</strong>
+            </div>
+          </div>
+          <p class="info-note">⚠️ Jalan masuk sempit, hanya dapat diakses oleh kendaraan roda dua (motor).</p>
+        </div>
+
+        <div class="info-card" id="info-tips">
+          <div class="info-icon">🎒</div>
+          <h3>Tips Berkunjung</h3>
+          <ul class="tips-list">
+            <li>👟 Gunakan alas kaki yang tidak licin</li>
+            <li>🧴 Bawa sunscreen & air minum</li>
+            <li>🚯 Jaga kebersihan, jangan buang sampah</li>
+            <li>📵 Sinyal HP terbatas di area air terjun</li>
+            <li>🍂 Hindari puncak kemarau (debit air mengecil/kering)</li>
+            <li>🌧️ Hindari musim hujan lebat (jalan sangat licin)</li>
+            <li>👥 Ajak teman, jangan solo trip</li>
+          </ul>
+        </div>
+
+        <div class="info-card" id="info-fasilitas">
+          <div class="info-icon">🏕️</div>
+          <h3>Fasilitas</h3>
+          <div class="facility-grid">
+            <div class="fac-item">🚻 <span>Toilet Umum</span></div>
+            <div class="fac-item">🅿️ <span>Area Parkir (Motor)</span></div>
+            <div class="fac-item">🪑 <span>Tempat Duduk Santai</span></div>
+            <div class="fac-item">🛟 <span>Pelampung Gratis</span></div>
+            <div class="fac-item">🛤️ <span>Jalur Trekking</span></div>
+            <div class="fac-item">📷 <span>Spot Foto</span></div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- ===== MAPS ===== -->
+  <section id="lokasi" class="lokasi section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="map_tag">Lokasi</span>
+        <h2 data-i18n="map_title">Temukan Kami di <em>Peta</em></h2>
+        <p data-i18n="map_sub">Dusun Kerok Kulon, menanti kedatanganmu</p>
+      </div>
+      <div class="maps-wrapper">
+        <div class="maps-info">
+          <div class="maps-address">
+            <h3>📍 Alamat Lengkap</h3>
+            <p><strong>Air Terjun Tluvalley</strong><br />Kerok Kulon, Desa Candi<br />Kecamatan Pringkuku, Kabupaten Pacitan<br />Jawa Timur 63552, Indonesia</p>
+          </div>
+          <div class="maps-contact">
+            <h3>📞 Kontak & Info</h3>
+            <p>Untuk informasi lebih lanjut, silakan hubungi pengelola desa atau datang langsung ke lokasi.</p>
+            <div class="contact-socials">
+              <a href="https://www.tiktok.com/@grojokantluvalley?_r=1&_t=ZS-97xouAKfdyh" target="_blank" rel="noopener noreferrer" class="social-btn">🎵 TikTok</a>
+              <a href="https://wa.me/6287850061407" target="_blank" rel="noopener noreferrer" class="social-btn">💬 WhatsApp</a>
+            </div>
+          </div>
+        </div>
+        <div class="maps-embed">
+          <iframe
+            src="https://maps.google.com/maps?q=Q2QF%2B8FG%2C%20Kerok%20Kulon%2C%20Candi%2C%20Kec.%20Pringkuku%2C%20Kabupaten%20Pacitan%2C%20Jawa%20Timur%2063552&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Lokasi Air Terjun Tluvalley"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-wave">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+        <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#1A3A25" />
+      </svg>
+    </div>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="logo.jpg" alt="Logo Tluvalley" class="logo-img" />
+          <span>Tluvalley</span>
+        </div>
+        <p data-i18n="footer_desc">Wisata alam tersembunyi yang menyimpan keindahan sesungguhnya — Dusun Kerok Kulon, Pacitan, Jawa Timur.</p>
+        <p class="footer-kkn" data-i18n="footer_kkn">🎓 Dikembangkan oleh Tim KKN 2026 Natan & Rizky</p>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_nav_title">Navigasi</h4>
+        <ul>
+          <li><a href="#tentang" data-i18n="nav_about">Tentang</a></li>
+          <li><a href="#perjalanan" data-i18n="nav_journey">Perjalanan</a></li>
+          <li><a href="#galeri" data-i18n="nav_gallery">Galeri</a></li>
+          <li><a href="#info" data-i18n="nav_info">Informasi</a></li>
+          <li><a href="#lokasi" data-i18n="footer_map">Lokasi & Peta</a></li>
+        </ul>
+      </div>
+      <div class="footer-info">
+        <h4 data-i18n="footer_info_title">Informasi Singkat</h4>
+        <ul>
+          <li data-i18n="footer_open">🕗 Buka: 08.00 – 17.00 WIB</li>
+          <li data-i18n="footer_ticket">🎟️ Tiket: Rp 5rb / Rp 25rb</li>
+          <li>📍 Kec. Pringkuku, Pacitan</li>
+          <li data-i18n="footer_trek">🚶 Trek: ±20 menit jalan kaki</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Wisata Air Terjun Tluvalley · Dusun Kerok Kulon · Jawa Timur</p>
+    </div>
+  </footer>
+
+  <!-- ===== LIGHTBOX MODAL ===== -->
+  <div id="lightbox" style="
+    display: none; position: fixed; inset: 0; z-index: 9999;
+    background: rgba(0,0,0,0.88); backdrop-filter: blur(8px);
+    align-items: center; justify-content: center; cursor: zoom-out;
+  " onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Full Image" style="
+      max-width: 92vw; max-height: 92vh;
+      border-radius: 16px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+      object-fit: contain;
+      animation: lbFadeIn 0.25s ease;
+      display: block;
+    " onclick="event.stopPropagation()" onerror="handleLightboxError()" />
+    <div id="lightbox-placeholder" style="
+      display: none; flex-direction: column; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px; padding: 40px; color: white; text-align: center;
+      max-width: 90%; width: 400px; backdrop-filter: blur(10px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      animation: lbFadeIn 0.25s ease;
+    " onclick="event.stopPropagation()">
+      <span style="font-size: 3rem; margin-bottom: 16px;">📷</span>
+      <h4 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 8px;" data-i18n="lightbox_no_photo_title">Foto Belum Diunggah</h4>
+      <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.5;" data-i18n="lightbox_no_photo_desc">Silakan letakkan file gambar di direktori proyek dengan nama file yang sesuai agar dapat ditampilkan.</p>
+    </div>
+    <button onclick="closeLightbox()" style="
+      position: fixed; top: 20px; right: 24px;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+      color: white; font-size: 1.6rem; width: 44px; height: 44px;
+      border-radius: 50%; cursor: pointer; backdrop-filter: blur(8px);
+      line-height: 1; display: flex; align-items: center; justify-content: center;
+    ">✕</button>
+  </div>
+
+  <style>
+    @keyframes lbFadeIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
+  </style>
+
+  <script>
+    // Generic lightbox for any element with data-lightbox
+    document.querySelectorAll('[data-lightbox]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        const img = el.getAttribute('data-lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        const lbPlaceholder = document.getElementById('lightbox-placeholder');
+        
+        lbImg.src = img;
+        lbImg.style.display = 'block';
+        lbPlaceholder.style.display = 'none';
+        
+        document.getElementById('lightbox').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    function handleLightboxError() {
+      document.getElementById('lightbox-img').style.display = 'none';
+      document.getElementById('lightbox-placeholder').style.display = 'flex';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+  <!-- ===== GALLERY SLIDER JS ===== -->
+  <script>
+    (function() {
+      const track   = document.getElementById('galleryTrack');
+      const slides  = track ? track.querySelectorAll('.gallery-slide') : [];
+      const dotsEl  = document.getElementById('galleryDots');
+      const counter = document.getElementById('slideCounter');
+      const total   = slides.length;
+      let current   = 0;
+      let timer;
+
+      if (!track || total === 0) return;
+
+      // Build dots
+      slides.forEach(function(_, i) {
+        const d = document.createElement('button');
+        d.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Slide ' + (i + 1));
+        d.addEventListener('click', function() { goTo(i); });
+        dotsEl.appendChild(d);
+      });
+
+      function goTo(n) {
+        current = (n + total) % total;
+        track.style.transform = 'translateX(-' + current * 100 + '%)';
+        counter.textContent = (current + 1) + ' / ' + total;
+        dotsEl.querySelectorAll('.gallery-dot').forEach(function(d, i) {
+          d.classList.toggle('active', i === current);
+        });
+        resetTimer();
+      }
+
+      document.getElementById('galleryPrev').addEventListener('click', function() { goTo(current - 1); });
+      document.getElementById('galleryNext').addEventListener('click', function() { goTo(current + 1); });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight') goTo(current + 1);
+        if (e.key === 'ArrowLeft')  goTo(current - 1);
+      });
+
+      // Auto-play every 6.5s
+      function startTimer() { timer = setInterval(function() { goTo(current + 1); }, 6500); }
+      function resetTimer()  { clearInterval(timer); startTimer(); }
+      startTimer();
+
+      // Pause on hover
+      const wrap = document.getElementById('gallerySlider');
+      wrap.addEventListener('mouseenter', function() { clearInterval(timer); });
+      wrap.addEventListener('mouseleave', startTimer);
+
+      // Touch / swipe support
+      let startX = 0;
+      wrap.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, {passive:true});
+      wrap.addEventListener('touchend', function(e) {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) { diff > 0 ? goTo(current + 1) : goTo(current - 1); }
+      });
+    })();
+  </script>
+
+  <script src="script.js?v=2026"></script>
+  <script src="i18n.js?v=2026"></script>
+</body>
+
+</html>

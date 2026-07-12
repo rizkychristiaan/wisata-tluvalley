@@ -1,0 +1,51 @@
+/* ===== INFORMASI ===== */
+.info { background: var(--white); }
+.info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 32px; }
+
+.info-card {
+  background: var(--bg); border-radius: var(--radius); padding: 28px;
+  transition: var(--transition); border: 1px solid rgba(59,191,173,0.15);
+}
+.info-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.info-icon { font-size: 2.4rem; margin-bottom: 12px; }
+.info-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--green-deep); margin-bottom: 16px; }
+.info-detail { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+.info-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.92rem; }
+.info-row span { color: var(--text-muted); }
+.info-row strong { color: var(--text); }
+.price-free { color: var(--teal-dark) !important; }
+.info-note {
+  font-size: 0.8rem; color: var(--text-muted);
+  background: rgba(59,191,173,0.08); padding: 8px 12px;
+  border-radius: 8px; border-left: 3px solid var(--teal);
+}
+.tips-list { display: flex; flex-direction: column; gap: 8px; }
+.tips-list li { font-size: 0.88rem; color: var(--text-muted); padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.facility-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.fac-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.88rem; color: var(--text-muted);
+  background: white; padding: 8px 12px; border-radius: 8px;
+}
+
+/* Rute Card */
+.rute-card {
+  background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+  border-radius: var(--radius); padding: 36px;
+  display: flex; gap: 24px; align-items: flex-start;
+}
+.rute-icon { font-size: 2.5rem; flex-shrink: 0; }
+.rute-content h3 { font-size: 1.2rem; font-weight: 700; color: white; margin-bottom: 20px; }
+.rute-steps { display: flex; flex-direction: column; gap: 16px; }
+.rute-step { display: flex; gap: 16px; align-items: flex-start; }
+.rs-num {
+  width: 28px; height: 28px; background: var(--teal);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 0.82rem; font-weight: 700; color: white; flex-shrink: 0;
+}
+.rute-step p { color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .info-grid { grid-template-columns: 1fr; }
+  .rute-card { flex-direction: column; }
+}

@@ -1,0 +1,120 @@
+/* ===== GALERI SLIDER ===== */
+.galeri { background: var(--bg); }
+
+/* Carousel wrapper */
+.gallery-slider-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 32px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  background: #000;
+  aspect-ratio: 16/9;
+}
+
+/* Track that holds all slides */
+.gallery-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Each slide */
+.gallery-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.gallery-slide:hover img { transform: scale(1.04); }
+
+/* Caption overlay */
+.slide-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 32px 24px 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%);
+  color: white;
+}
+.slide-caption strong { display: block; font-size: 1.05rem; font-weight: 700; margin-bottom: 2px; }
+.slide-caption small  { font-size: 0.82rem; opacity: 0.8; }
+
+/* Arrow buttons */
+.gallery-prev,
+.gallery-next {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+  color: white;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+.gallery-prev { left: 16px; }
+.gallery-next { right: 16px; }
+.gallery-prev:hover,
+.gallery-next:hover {
+  background: rgba(255,255,255,0.35);
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* Dot navigation */
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.gallery-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.2);
+  border: none; cursor: pointer;
+  transition: all 0.25s ease;
+}
+.gallery-dot.active {
+  background: var(--teal);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Slide counter badge */
+.slide-counter {
+  position: absolute;
+  top: 14px; right: 16px;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 50px;
+  backdrop-filter: blur(6px);
+  z-index: 5;
+}
+
+.gallery-cta { text-align: center; }
+.gallery-cta p { color: var(--text-muted); margin-bottom: 12px; }
+
+@media (max-width: 900px) {
+  .gallery-slider-wrap { border-radius: 16px; }
+  .gallery-prev, .gallery-next { width: 38px; height: 38px; font-size: 1rem; }
+}
+@media (max-width: 600px) {
+  .gallery-slider-wrap { border-radius: 12px; aspect-ratio: 4/3; }
+}
